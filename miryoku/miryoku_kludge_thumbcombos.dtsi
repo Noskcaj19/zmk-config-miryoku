@@ -9,6 +9,13 @@ thumbcombos_ ## LAYER ## _ ## POSITION { \
   bindings = <BINDING>; \
   timeout-ms = <MIRYOKU_KLUDGE_THUMBCOMBOS_TERM>; \
 };
+#define MIRYOKU_KLUDGE_THUMBESC_MACRO(LAYER) \
+thumbesccombo_ ## LAYER { \
+  layers = <LAYER>; \
+  key-positions = <30 33>; \
+  bindings = <&kp ESC>; \
+  timeout-ms = <MIRYOKU_KLUDGE_THUMBCOMBOS_TERM>; \
+};
 
 / {
   combos {
@@ -48,5 +55,12 @@ thumbcombos_ ## LAYER ## _ ## POSITION { \
     MIRYOKU_KLUDGE_THUMBCOMBOS_MACRO(U_MEDIA, RIGHT, &kp C_MUTE)
   #endif
 #endif
+
+    MIRYOKU_KLUDGE_THUMBESC_MACRO(U_BASE)
+    MIRYOKU_KLUDGE_THUMBESC_MACRO(U_EXTRA)
+    MIRYOKU_KLUDGE_THUMBESC_MACRO(U_BUTTON)
+    MIRYOKU_KLUDGE_THUMBESC_MACRO(U_NAV)
+    MIRYOKU_KLUDGE_THUMBESC_MACRO(U_MOUSE)
+    MIRYOKU_KLUDGE_THUMBESC_MACRO(U_MEDIA)
   };
 };
